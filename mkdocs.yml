@@ -1,17 +1,13 @@
 site_name: ONE Campaign Docs
 copyright: Copyright ONE Campaign 2025
 theme:
+  icon:
+    annotation: material/arrow-right-circle
   favicon: assets/one_logo.png
   font:
     text: Calibri, sans-serif
   palette:
     # Palette toggle for light mode
-
-    - scheme: default
-      primary: black
-      toggle:
-        icon: material/weather-sunny
-        name: Switch to dark mode
 
     # Palette toggle for dark mode
     - scheme: slate
@@ -19,14 +15,26 @@ theme:
       toggle:
         icon: material/weather-night
         name: Switch to light mode
+
+    - scheme: default
+      primary: black
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+
   name: material
   custom_dir: overrides
   logo: assets/one_logo_white.png
   features:
+    - content.tooltips
+    - content.code.copy
+    - content.code.annotate
+    - content.code.select
     - navigation.footer
     - navigation.instant
     - navigation.instant.prefetch
     - navigation.instant.progress
+    - navigation.instant.preview
     - navigation.tracking
     - navigation.tabs
 #    - navigation.tabs.sticky
@@ -45,7 +53,7 @@ nav:
         - Why bblocks?: python_tools/bblocks/why_bblocks.md
         - Getting Started: python_tools/bblocks/getting_started.md
         - bblocks-data-importers:
-            - Overview: python_tools/bblocks/bblocks_data_importers.md
+            - python_tools/bblocks/data_importers/index.md
       - oda-reader:
         - python_tools/oda_reader/index.md
   - Methodologies:
@@ -59,12 +67,45 @@ nav:
       - Data Analysis and Research principles: guidelines/data_analysis.md
       - Data Visualization Guideline:
           - guidelines/viz/index.md
+  - Code Books:
+      - codebooks/index.md
+      - ODA:
+          - codebooks/oda/index.md
+          - ODA Basics: codebooks/oda/oda_basics.md
+          - ODA Data:
+                - codebooks/oda/oda_data/index.md
+                - DAC1: codebooks/oda/oda_data/dac1.md
 
 plugins:
   - search
   - tags
+  - blog:
+      authors_profiles: true
 
 extra_css:
   - stylesheets/extra.css
 extra_javascript:
   - javascripts/extra.js
+
+markdown_extensions:
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.superfences
+  - attr_list
+  - md_in_html
+  - abbr
+  - attr_list
+  - pymdownx.snippets:
+        auto_append:
+          - includes/abbreviations.md
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format

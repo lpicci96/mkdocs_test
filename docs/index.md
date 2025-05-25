@@ -6,14 +6,37 @@ hide:
 ---
 
 
-<h1 style="font-weight: bold">Welcome to ONE Campaign's documentation!</h1>
+<h1 style="font-weight: bold">Welcome to ONE Campaign's documentation hub!</h1>
 
-Find all the documentation for ONE Campaign's tools and research here.
+__Find all the documentation for ONE Campaign's tools and research here.__
 
-This includes:
 
-- [Python tools](python_tools/index.md): Our Python toolkit for data science and international development.
+<div class="grid cards" markdown>
 
-- [ETL](etl/index.md): Our ETL process that powers our Data Commons knowledge graph.
+-   :fontawesome-brands-python: [__Python tools__](python_tools/index.md)
 
-- [Methodology](methodology/index.md): Our research methodologies behind our publications.
+    ---
+    Tools for code-driven analysis and data processing.
+
+
+- :fontawesome-solid-book-open: [__Methodologies__](methodology/index.md)
+
+    ---
+    Our research methodologies behind our publications.
+
+- :fontawesome-solid-gear: [__ETL__](etl/index.md)
+
+    ---
+    Our ETL process that powers our Data Commons knowledge graph.
+
+- :fontawesome-solid-map: [__Guidelines__](guidelines/index.md)
+
+    ---
+    Guidelines to maintain consistency and quality in our work.
+
+- :fontawesome-solid-code: [__Code Books__](codebooks/index.md)
+
+    ---
+    Codebooks for the data we use in our research.
+
+</div>
